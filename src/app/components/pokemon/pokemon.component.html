@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <div
+    *ngIf="pokemon"
+    class="row animate_animated animate_bounce animate_fadeIn"
+  >
+    <div class="col-md-9">
+      <p><strong>Identifier:</strong> {{ pokemon.id }}</p>
+      <p><strong>Name:</strong> {{ pokemon.name }}</p>
+      <p><strong>Weight:</strong> {{ pokemon.weight }}</p>
+
+      <img
+        style="width: 50%; height: 50%"
+        class="rounded"
+        src="{{ sprites.front_default }}"
+        alt=""
+      />
+    </div>
+
+    <div class="col-md-3">
+      <a class="btn btn-danger" routerLink="/">Back</a>
+    </div>
+  </div>
+</div>

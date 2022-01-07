@@ -1,0 +1,9 @@
+h1 {
+  display: flex;
+  justify-content: center;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 200;
+  padding: 2vw;
+}

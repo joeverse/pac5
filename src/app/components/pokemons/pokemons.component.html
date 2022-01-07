@@ -1,0 +1,18 @@
+<mat-spinner
+  *ngIf="showSpinner"
+  style="margin: 0 auto"
+  mode="indeterminate"
+></mat-spinner>
+<h1>Pokémon</h1>
+<div class="container" [@flyInOut]>
+  <ul class="list-group">
+    <a
+      *ngFor="let pokemon of pokemons?.results"
+      [routerLink]="['/pokemon', pokemon.name]"
+      class="list-group-item"
+      >{{ pokemon.name }}</a
+    >
+  </ul>
+</div>
+
+<!--*ngFor="let pokemon of pokemons"-->
