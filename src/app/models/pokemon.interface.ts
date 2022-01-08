@@ -3,6 +3,12 @@ export interface Pokemon {
   name: string;
   weight: number;
   sprites: string;
+  abilities: string;
+  abilitiesStringArray: string;
+  abilityName: string;
+  height: number;
+  base_experience: number;
+  moves: string;
   //count: number;
   //next: string;
   //previous: string;

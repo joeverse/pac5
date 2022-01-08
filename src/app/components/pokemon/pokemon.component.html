@@ -3,21 +3,77 @@
     *ngIf="pokemon"
     class="row animate_animated animate_bounce animate_fadeIn"
   >
-    <div class="col-md-9">
-      <p><strong>Identifier:</strong> {{ pokemon.id }}</p>
-      <p><strong>Name:</strong> {{ pokemon.name }}</p>
-      <p><strong>Weight:</strong> {{ pokemon.weight }}</p>
-
-      <img
-        style="width: 50%; height: 50%"
-        class="rounded"
-        src="{{ sprites.front_default }}"
-        alt=""
-      />
+    <div class="margin column">
+      <a class="btn btn-danger" routerLink="/">Back</a>
     </div>
 
-    <div class="col-md-3">
-      <a class="btn btn-danger" routerLink="/">Back</a>
+    <div class="display-5 center margin">
+      <p>
+        Pokémon Name: <strong class="display-3">{{ pokemon.name }}</strong>
+      </p>
+    </div>
+    <div class="col-md-3 margin"></div>
+    <div class="center">
+      <button (click)="loadData()" mat-stroked-button color="primary">
+        Show all details
+        <mat-icon>map</mat-icon>
+      </button>
+    </div>
+    <div class="margin">
+      <mat-tab-group *ngIf="showAllDetails" mat-align-tabs="center">
+        <mat-tab label="General" mat-align-tabs="center">
+          <div>
+            <p class="list-group-item center margin">
+              <strong>Identifier: </strong> {{ pokemon.id }}
+            </p>
+            <p class="list-group-item center margin">
+              <strong>Height: </strong> {{ pokemon.height }}
+            </p>
+            <p class="list-group-item center margin">
+              <strong>Weight: </strong> {{ pokemon.weight }}
+            </p>
+            <p class="list-group-item center margin">
+              <strong>Base Experience: </strong> {{ pokemon.base_experience }}
+            </p>
+          </div>
+        </mat-tab>
+        <mat-tab label="Abilities">
+          <div>
+            <p *ngFor="let abilityName of abilitiesStringArray">
+              <strong
+                ><ul class="list-group-item center">
+                  {{
+                    abilityName.name
+                  }}
+                </ul></strong
+              >
+            </p>
+          </div>
+        </mat-tab>
+        <mat-tab label="Moves">
+          <div>
+            <p *ngFor="let moveName of movesStringArray">
+              <strong
+                ><ul class="list-group-item center">
+                  {{
+                    moveName.name
+                  }}
+                </ul></strong
+              >
+            </p>
+          </div>
+        </mat-tab>
+        <mat-tab label="Image">
+          <div class="center margin">
+            <img
+              style="width: 40%; height: 40%"
+              class="rounded"
+              src="{{ sprites.front_default }}"
+              alt=""
+            />
+          </div>
+        </mat-tab>
+      </mat-tab-group>
     </div>
   </div>
 </div>

@@ -12,6 +12,13 @@ import { environment } from '../environments/environment';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [AppComponent, PokemonsComponent, PokemonComponent],
@@ -27,6 +34,13 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     }),
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
+    MatTabsModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatButtonModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

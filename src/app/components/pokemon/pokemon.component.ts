@@ -11,6 +11,12 @@ import { PokemonsService } from 'src/app/services/pokemons.service';
 export class PokemonComponent implements OnInit {
   pokemon: Pokemon | undefined;
   sprites: any;
+  abilities: any;
+  abilitiesArray: any;
+  abilitiesStringArray: any;
+  moves: any;
+  movesStringArray: any;
+  showAllDetails = false;
   constructor(
     private pokemonsService: PokemonsService,
     private activatedRoute: ActivatedRoute,
@@ -21,16 +27,32 @@ export class PokemonComponent implements OnInit {
     const identifier = this.activatedRoute.snapshot.paramMap.get(
       'id'
     ) as string;
-    console.log('Identifier -->', identifier);
     this.pokemonsService.getPokemonById(identifier).subscribe((pokemon) => {
       if (!pokemon) {
         return this.router.navigateByUrl('/');
       }
-
       this.pokemon = pokemon;
-      console.log('Pokemon -->', this.pokemon);
       this.sprites = pokemon.sprites;
-      console.log('Image -->', this.sprites);
+      this.abilities = pokemon.abilities;
+      this.abilitiesStringArray = this.abilities.map(
+        (abilitiesObject: { ability: { abilityName: any } }) => {
+          return abilitiesObject.ability;
+        }
+      );
+      this.moves = pokemon.moves;
+      this.movesStringArray = this.moves.map(
+        (movesObject: { move: { moveName: any } }) => {
+          return movesObject.move;
+        }
+      );
     });
+  }
+
+  loadData() {
+    if (this.showAllDetails === false) {
+      this.showAllDetails = true;
+    } else {
+      this.showAllDetails = false;
+    }
   }
 }

@@ -11,24 +11,10 @@ export class PokemonsService {
 
   getAllPokemons(): Observable<Pokemon> {
     return this.http.get<Pokemon>(
-      'https://pokeapi.co/api/v2/pokemon?limit=50&offset=200'
+      'https://pokeapi.co/api/v2/pokemon?limit=200&offset=200'
     );
   }
   getPokemonById(id: String): Observable<Pokemon> {
     return this.http.get<Pokemon>('https://pokeapi.co/api/v2/pokemon/' + id);
   }
 }
-
-/* 
-
-  getAllPokemons(): Observable<Pokemon[]> {
-    return this.http.get<Pokemon[]>(
-      'https://pokeapi.co/api/v2/pokemon?limit=50&offset=200'
-    );
-  }
-
-  getPokemonById(id: String): Observable<Pokemon> {
-    return this.http.get<Pokemon>('https://picsum.photos/id/' + id + '/info');
-  }
-"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
-*/

@@ -1,0 +1,22 @@
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.right {
+  display: flex;
+  justify-content: right;
+}
+
+.margin {
+  margin: 2vw;
+}
+
+.list-group-item {
+  padding: 2em;
+  font-size: larger;
+}
+
+.column {
+  text-align: right;
+}

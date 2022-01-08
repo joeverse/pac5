@@ -29,6 +29,8 @@ import {
 export class PokemonsComponent implements OnInit {
   pokemons: any;
   showSpinner = false;
+  pokemon: Pokemon | undefined;
+  sprites: any;
   constructor(private pokemonsService: PokemonsService) {}
 
   ngOnInit(): void {
