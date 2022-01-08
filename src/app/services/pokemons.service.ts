@@ -11,7 +11,7 @@ export class PokemonsService {
 
   getAllPokemons(): Observable<Pokemon> {
     return this.http.get<Pokemon>(
-      'https://pokeapi.co/api/v2/pokemon?limit=200&offset=200'
+      'https://pokeapi.co/api/v2/pokemon?limit=300&offset=200'
     );
   }
   getPokemonById(id: String): Observable<Pokemon> {

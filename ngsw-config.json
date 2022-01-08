@@ -32,8 +32,8 @@
   ],
   "dataGroups": [
     {
-      "name": "images-api",
-      "urls": ["https://picsum.photos"],
+      "name": "pokemon-api",
+      "urls": ["https://pokeapi.co/**"],
       "cacheConfig": {
         "maxSize": 10,
         "maxAge": "1h",
